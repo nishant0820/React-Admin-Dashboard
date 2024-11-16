@@ -1,7 +1,7 @@
 import { KanbanColumnSkeleton, ProjectCardSkeleton } from '@/components'
 import { KanbanAddCardButton } from '@/components/tasks/kanban/add-card-button'
 import { KanbanBoard, KanbanBoardContainer } from '@/components/tasks/kanban/board'
-import ProjectCard, { ProjectCardMemo } from '@/components/tasks/kanban/card'
+import { ProjectCardMemo } from '@/components/tasks/kanban/card'
 import KanbanColumn from '@/components/tasks/kanban/column'
 import KanbanItem from '@/components/tasks/kanban/item'
 import { UPDATE_TASK_STAGE_MUTATION } from '@/graphql/mutations'
