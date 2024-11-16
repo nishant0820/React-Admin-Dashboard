@@ -5,12 +5,17 @@ import { Company } from '@/graphql/schema.types';
 import { currencyNumber } from '@/utilities';
 import { SearchOutlined } from '@ant-design/icons';
 import { CreateButton, DeleteButton, EditButton, FilterDropdown, List, useTable } from '@refinedev/antd'
-import { getDefaultFilter, useGo } from '@refinedev/core'
+import { getDefaultFilter, useGo, GetFieldsFromList, HttpError } from '@refinedev/core'
 import { Input, Space, Table } from 'antd';
+import { CompaniesListQuery } from '@/graphql/types';
 
 export const CompanyList = ({ children }: React.PropsWithChildren) => {
   const go=useGo();
-  const { tableProps, filters } = useTable({
+  const { tableProps, filters } = useTable<
+    GetFieldsFromList<CompaniesListQuery>,
+    HttpError,
+    GetFieldsFromList<CompaniesListQuery>
+  >({
     resource: 'companies',
     onSearch: (values) => {
       return[
